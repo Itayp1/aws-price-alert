@@ -5,6 +5,7 @@ const transporter = nodemailer.createTransport({
   host: "email-smtp.us-west-1.amazonaws.com",
   port: 25,
   secure: false,
+  connectionTimeout: "5000",
   auth: {
     user: SMTP_USERNAME,
     pass: SMTP_PASSWORD,
