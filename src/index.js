@@ -11,6 +11,6 @@ app.get("/health", (req, res) => {
 });
 
 app.listen(3001, () => {
-  console.log("listen on port 3000");
+  console.log("listen on port 3001");
   cronJob();
 });
