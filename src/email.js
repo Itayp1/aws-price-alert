@@ -1,6 +1,5 @@
 const nodemailer = require("nodemailer");
 const { SMTP_PASSWORD, SMTP_USERNAME } = require("../server_config");
-console.log({ SMTP_PASSWORD, SMTP_USERNAME });
 
 const transporter = nodemailer.createTransport({
   host: "email-smtp.us-west-1.amazonaws.com",
