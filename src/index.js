@@ -3,7 +3,11 @@ const app = express();
 const cronJob = require("./cronJob");
 
 app.get("/health", (req, res) => {
-  return res.json("hello world itayp the king!!");
+  const status = {
+    status: "UP",
+    price_limit: "501",
+  };
+  return res.json(status);
 });
 
 app.listen(3000, () => {
