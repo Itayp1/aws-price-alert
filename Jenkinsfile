@@ -15,7 +15,7 @@ pipeline {
                     try {
                         sh 'sudo docker rm --force  aws-price-alert'
                                  } finally {
-                        sh 'sudo docker run --detach -p 3000:3000 --name aws-price-alert  aws-price-alert'
+                        sh 'sudo docker run --detach -p 3001:3001 --name aws-price-alert  aws-price-alert'
                     }
 
                 }
