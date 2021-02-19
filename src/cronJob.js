@@ -12,10 +12,9 @@ const price_alert = async (productId) => {
   }
 };
 
-price_alert("B07B2X1VXZ");
 module.exports = () => {
   // Schedule tasks to be run on the server.
-  cron.schedule("*/2 * * * *", function () {
+  cron.schedule("*/10 * * * *", function () {
     console.log("running a task every 2 minutes");
     price_alert("B07B2X1VXZ");
     price_alert("B07KXCTRF6");
