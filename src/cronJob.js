@@ -8,7 +8,7 @@ const price_alert = async (productId) => {
     email(product);
     console.log(`the price lower send email ${product}`);
   } else {
-    console.log(`the price ok ${product}`);
+    console.log(`the price regular ${product}`);
   }
 };
 
