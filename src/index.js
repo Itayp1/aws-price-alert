@@ -1,26 +1,12 @@
-const nodemailer = require("nodemailer");
+const express = require("express");
+const app = express();
+const cronJob = require("./cronJob");
 
-const transporter = nodemailer.createTransport({
-  host: "email-smtp.us-west-1.amazonaws.com",
-  port: 25,
-  secure: false,
-  auth: {
-    user: "AKIAYJQMZC5M4TA6D6EV",
-    pass: "BLLmQv+K8Kq4pDzt9YVTYhN+v4niCh9cHhSWOue+YCvM",
-  },
+app.get("/health", (req, res) => {
+  return res.json("hello world itayp the king!!");
 });
 
-const mailOptions = {
-  from: "peretz.itay@itayp-dev.com",
-  to: "peretz.itay@gmail.com",
-  subject: "test",
-  text: "text",
-};
-
-transporter.sendMail(mailOptions, (err, data) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
-  console.log(JSON.stringify(data));
+app.listen(3000, () => {
+  console.log("listen on port 3000");
+  cronJob();
 });
