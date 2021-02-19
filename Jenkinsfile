@@ -8,7 +8,7 @@ pipeline {
                 sh 'rm -rf aws-price-alert'
                 sh 'git clone https://github.com/Itayp1/aws-price-alert.git'
      
-                sh 'cp .env aws-price-alert/src'
+                sh 'cp .env aws-price-alert'
 
                 sh 'cd aws-price-alert && sudo docker build -t aws-price-alert .'
 
