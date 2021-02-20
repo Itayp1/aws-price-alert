@@ -5,7 +5,7 @@ const cronJob = require("./cronJob");
 app.get("/health", (req, res) => {
   const status = {
     status: "UP",
-    price_limit: "5011",
+    price_limit: "490",
   };
   return res.json(status);
 });
