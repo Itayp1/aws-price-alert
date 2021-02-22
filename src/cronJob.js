@@ -17,7 +17,7 @@ const price_alert = async (productId) => {
       return;
     }
     email(product);
-    // sendSms(product);
+    ///// sendSms(product);
     products.push(product);
     console.log(`the price lower send email ${product}`);
   } else {
