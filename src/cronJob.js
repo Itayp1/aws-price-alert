@@ -2,7 +2,7 @@ const priceCompare = require("./priceCompare");
 const cron = require("node-cron");
 const email = require("./email");
 const sendSms = require("./sns_publishsms");
-
+const CRON_INTERVAL = 15;
 let products = [];
 
 setInterval(() => {
@@ -28,9 +28,9 @@ const price_alert = async (productId) => {
 module.exports = () => {
   // Schedule tasks to be run on the server.
 
-  cron.schedule(" */30 * * * *", function () {
+  cron.schedule(` */${CRON_INTERVAL} * * * *`, function () {
     // cron.schedule("*/10 * * * *", function () {
-    console.log(`running a task every 30 minutes ${new Date()}`);
+    console.log(`running a task every ${CRON_INTERVAL} minutes ${new Date()}`);
     price_alert("B07B2X1VXZ");
     price_alert("B07KXCTRF6");
   });
