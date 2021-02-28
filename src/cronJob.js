@@ -2,20 +2,20 @@ const priceCompare = require("./priceCompare");
 const cron = require("node-cron");
 const email = require("./email");
 const sendSms = require("./sns_publishsms");
-const CRON_INTERVAL = 15;
+const CRON_INTERVAL = 10;
 let products = [];
 
-setInterval(() => {
-  products = [];
-}, 1000 * 60 * 60);
+// setInterval(() => {
+//   products = [];
+// }, 1000 * 60 * 60);
 
 const price_alert = async (productId) => {
   const [isLower, product] = await priceCompare(productId);
   if (isLower) {
-    if (products.includes(product)) {
-      console.log(`didnt send sms again  product:${product}`);
-      return;
-    }
+//     if (products.includes(product)) {
+//       console.log(`didnt send sms again  product:${product}`);
+//       return;
+//     }
     email(product);
     ///// sendSms(product);
     products.push(product);
