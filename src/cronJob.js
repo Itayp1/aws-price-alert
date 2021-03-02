@@ -12,12 +12,12 @@ let products = [];
 const price_alert = async (productId) => {
   const [isLower, product] = await priceCompare(productId);
   if (isLower) {
-//     if (products.includes(product)) {
-//       console.log(`didnt send sms again  product:${product}`);
-//       return;
-//     }
+    if (products.includes(product)) {
+      console.log(`didnt send sms again  product:${product}`);
+      return;
+    }
     email(product);
-  //   sendSms(product);
+    //   sendSms(product);
     products.push(product);
     console.log(`the price lower send email ${product}`);
   } else {

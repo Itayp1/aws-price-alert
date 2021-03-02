@@ -8,7 +8,7 @@ const priceCompare = async (productId) => {
     const url = product.prices.filter(({ price }) => price == lowest_price)[0].url;
     const msg = `lowest_price product:${product.id} title:${product.title} price:${lowest_price} url:${url}`;
 
-    return [lowest_price < 490, msg];
+    return [lowest_price < 500, msg];
   } catch (error) {
     return [false, "Service Temporarily Unavailable"];
   }
